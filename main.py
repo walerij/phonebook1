@@ -5,11 +5,22 @@ root = Tk()
 root.title("Телефонная книга Валерона")
 root.geometry("250x200")
 
-contacts = ["Иван", "Ирина", "Мама", "Бабушка"]
-languages_var = Variable(value=contacts)
+contacts = [
+    ("Ирина", "555-555-555"),
+    ("Мама", "456-777-888"),
+     ("Бабушка", "999-777-888"),
+    ]
+var = Variable(value=contacts)
 
-languages_listbox = Listbox(listvariable=languages_var)
+listbox = Listbox(root)
+#for i in range(0, len(contacts)):
+ #   listbox.insert(contacts[i][0], contacts[i][1])
 
-languages_listbox.pack(anchor=NW, fill=X, padx=5, pady=5)
+listbox.column(0, width=15, anchor="w")
+listbox.column(1, width=5, anchor="w")
+
+
+
+listbox.pack(anchor=NW, fill=X, padx=5, pady=5)
 
 root.mainloop()
